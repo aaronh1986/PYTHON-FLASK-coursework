@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-   {% for num in list_of_numbers %}
-     <p>{{ num }}</p>
-   {% endfor %}
+   
 
     <h2>{{ page_title }}</h2>
     <p>
@@ -14,85 +12,22 @@
         was also a sixth generation relative and the namesake of Thorin Oakenshield, who led the quest to reclaim the
         Lonely Mountain from the dragon Smaug, and afterwards died in the Battle of Five Armies.[1]
     </p>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Thorin Oakenshield</h3>
-            <p>
-                Originally called Olórin, he was accounted as the wisest of the Maiar (with the possible exception of
-                Melian). He was created by Ilúvatar before the Music of the Ainur[1], and was at the beginning of Time
-                amongst the Ainur who entered into Eä.[2] In his "youth", he became one of the Maiar who served Manwë,
-                Varda, Irmo and Nienna named. He was associated with light and fire, much like his peer Varda.[3] Yet
-                his ways often took him to Nienna, from whom he learned pity and patience. He loved the Elves, but he
-                walked unseen among them, or wore a fana that appeared like an Elf, and sent them fair visions in their
-                hearts that made them wiser. Throughout his existence, he followed the example of Nienna, he took pity
-                on the sorrows of the Children of Ilúvatar and drove those who listened to him out of despair
-            </p>
-        </div>
-        <div class="col md-5">
-            <img src="https://static.wikia.nocookie.net/lotr/images/d/df/The-Hobbit-An-Unexpected-Journey-2012.jpg" alt="">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-          <img src="https://static.wikia.nocookie.net/lotr/images/9/94/AAA.png" alt="">
-        </div>
-        <div class="col-md-7">
-            <h3>Fili and Kili</h3>
-            <p>He also appeared to possess a nigh-indomitable will. At one point, he was able to psychically challenge
-                Sauron for control of the Palantir of Orthanc, and proved victorious in that struggle. It should be
-                noted that even Gandalf the White was reluctant to use the Palantir for fear of challenging Sauron
-                directly and revealing himself to the Dark Lord. His fortitude in the face of the Army of the Dead was
-                unwavering and his companions remarked that he was mighty indeed in the strength of his will. He was
-                accounted as "the hardiest of living Men" during his lifetime.</p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Óin</h3>
-            <p>Óin was the older brother of Glóin, cousin of Dwalin and Balin, and uncle of Gimli. Oin's uncle was King
-                Fundin, the father of Balin and Dwalin. He usually wore a brown-hooded cloak when travelling. Óin fought
-                in the Battle of Azanulbizar along with Thorin Oakenshield, and in TA 2941 joined with Thorin and
-                Company on the quest to reclaim the Lonely Mountain wearing a brown hood.[2] Óin was one of the Dwarves
-                who bet that Bilbo would come along with them to reclaim the Lonely Mountain. Óin and his brother Glóin
-                were usually in charge of preparing the fire for the Company as they were the most skilled out of the
-                others. He fought in and survived the Battle of the Five Armies, and later settled in the Lonely
-                Mountain with King Dain Ironfoot II along with many other dwarves of The Company of Thorin.</p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://static.wikia.nocookie.net/lotr/images/e/e8/Oin.jpg" alt="">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://static.wikia.nocookie.net/lotr/images/f/fc/Gloin_2.jpg" alt="">
-        </div>
-        <div class="col-md-7">
-            <h3>Glóin</h3>
-            <p>
-                n TA 2941, Glóin and his brother Óin, along with his cousins Dwalin and Balin, were among the Dwarves
-                accompanying Thorin and Company during their quest to the Lonely Mountain to recapture The Kingdom of
-                Erebor from the Dragon Smaug. He was noted for his skills with a tinderbox, and, along with his brother
-                Óin, was usually the one told to get a fire started whenever the Dwarves made camp. Gloin also fought in
-                the Battle of the Five Armies.[1] After the battle, he returned to the Lonely Mountain.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Balin</h3>
-            <p>
-                Balin was a Dwarf leader, the son of Fundin, and elder brother of Dwalin. He was one of the thirteen
-                Dwarves who accompanied Thorin II Oakenshield on the quest to regain the Lonely Mountain.
-                A Dwarf Lord known for his wise counsel and willingness to listen, he was one of Thorin's closest
-                friends and advisers. Balin was distantly related to him, and a descendant of the noble house of Durin.
-                He later went to re-establish the kingdom of Moria, but within five years it was overcome once more by
-                Orcs, and he was killed there along with the rest of his companions.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://static.wikia.nocookie.net/lotr/images/5/52/Balin.jpg" alt="">
-        </div>
-    </div>
+
+    {% for member in company %}
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h3>{{ member.name }}</h3>
+                    <p>{{ member.description }}</p>
+                </div>
+                <div class="col md-5">
+                    <img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">
+            </div>
+
+            <hr class="featurette-divider">
+    
+    {% endfor %}
+  
 {% endblock %}
 
 
